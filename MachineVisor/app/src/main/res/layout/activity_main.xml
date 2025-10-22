@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Tabs header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tabHome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="Главная"
+                android:textStyle="bold"
+                android:background="#DDDDDD" />
+
+            <TextView
+                android:id="@+id/tabSettings"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="Настройки"
+                android:background="#EEEEEE" />
+        </LinearLayout>
+
+        <!-- Home content container -->
+        <LinearLayout
+            android:id="@+id/homeContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Меню"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Status Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Наклон телефона"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/statusText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Initializing sensors..."
+                android:textColor="#666666"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Camera Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Картинка с камеры"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="8dp" />
+
+            <androidx.camera.view.PreviewView
+                android:id="@+id/cameraPreviewView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#000000"
+                app:implementationMode="performance"
+                app:scaleType="fillCenter" />
+
+            <ImageView
+                android:id="@+id/cameraImageView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="8dp"
+                android:background="#f0f0f0"
+                android:scaleType="centerCrop"
+                android:contentDescription="Last captured frame" />
+
+            <TextView
+                android:id="@+id/cameraStatusText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Camera initializing..."
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:gravity="center"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <!-- Settings content container -->
+        <LinearLayout
+            android:id="@+id/settingsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Настройки TTS"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="16dp" />
+
+            <!-- TTS Speed -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Скорость речи"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp" />
+
+            <SeekBar
+                android:id="@+id/ttsSpeedSeek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="150" />
+
+            <TextView
+                android:id="@+id/ttsSpeedValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1.0x"
+                android:textColor="#666666"
+                android:layout_marginBottom="12dp" />
+
+            <!-- TTS Voice -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Голос"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp" />
+
+            <Spinner
+                android:id="@+id/ttsVoiceSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/ttsVoiceDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Выберите голос для синтеза речи"
+                android:textColor="#666666"
+                android:layout_marginTop="4dp" />
+
+            <Button
+                android:id="@+id/ttsTestButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Прослушать"
+                android:layout_marginTop="12dp" />
+
+            <!-- Server URL Settings -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Сервер"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Базовый адрес сервера (http://host:port)"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/serverUrlEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textUri"
+                android:hint="например, http://192.168.1.10:8000"
+                android:singleLine="true"
+                android:imeOptions="actionDone" />
+
+            <Button
+                android:id="@+id/serverUrlSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Сохранить"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
