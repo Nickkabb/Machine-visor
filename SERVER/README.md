@@ -17,8 +17,9 @@ pip install -r requirements.txt
 ```powershell
 python main.py
 ```
-Server listens on `http://0.0.0.0:8000`.
-
+## .env
+- PORT
+- IP
 ## API
 - GET /health → `{ status: "ok", time: ... }`
 - POST /upload (multipart/form-data)
