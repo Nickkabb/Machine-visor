@@ -1,2 +1,2 @@
-### About
-android app + its server i made as school project 
+### О проекте
+Приложение и сервер сделанные для школьного проекта
